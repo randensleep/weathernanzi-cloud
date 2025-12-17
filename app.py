@@ -154,7 +154,8 @@ def weight_status():
 
     try:
         gs_url = GOOGLE_SCRIPT_URL + f"?action=weight&status={status}&value={value}"
-        requests.get(gs_url, timeout=5)
+        r = requests.get(gs_url, timeout=5)
+        print("📤 GAS 回傳：", r.text)
     except Exception as e:
         print("❌ Google Sheet 傳送失敗：", e)
 
@@ -171,6 +172,7 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
 
 
 
