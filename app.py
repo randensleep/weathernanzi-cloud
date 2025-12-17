@@ -67,6 +67,8 @@ def update_weather():
                     rain_prob = int(rain_str) if rain_str.isdigit() else 0
 
                     weather_data = {
+                        "test": "render_alive",
+                        "temp": 25
                         "city": "Kaohsiung - Nanzih",
                         "weather": weather,
                         "min_temp": min_temp,
@@ -171,3 +173,4 @@ if __name__ == "__main__":
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
+
